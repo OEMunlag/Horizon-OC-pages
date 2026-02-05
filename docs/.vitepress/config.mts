@@ -6,9 +6,20 @@ export default defineConfig({
   description: "An open source overclocking tool for Nintendo Switch consoles running Atmosphere custom firmware ",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: 'local'
+    },
+
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guides', link: '/guide.md' }
+      { text: 'Guides', link: '/guide.md' },
+      {
+        text: 'Links',
+        items: [
+          { text: 'Original Mariko Guide', link: 'https://rentry.co/mariko' },
+          { text: 'Page Source', link: 'https://github.com/OEMunlag/Horizon-OC-pages' }
+        ]
+      }
     ],
 
     sidebar: [
@@ -23,7 +34,8 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Horizon-OC/Horizon-OC' }
+      { icon: 'github', link: 'https://github.com/Horizon-OC/Horizon-OC' },
+      { icon: 'discord', link: 'https://discord.gg/g4gWKhxmFY' }
     ]
   }
 })

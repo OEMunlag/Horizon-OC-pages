@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Horizon OC"
   text: "An open source overclocking tool for Nintendo Switch consoles running Atmosphere custom firmware"
-  tagline: We should add a tagline like genuinely give ideas please
+  tagline: Horizon OC te conviene
   image:
     src: /235948817.png
     alt: Horizon OC Logo
@@ -22,7 +22,7 @@ hero:
 
 features:
   - title: CPU/GPU/MEM Overclock
-    details: Achieve up to 2703 MHz CPU, 1804 MHz GPU and 8000 MHz memory, with additional options for more.
+    details: High potential overclocking for CPU, GPU, and Memory with safe limits.
   - title: GPU Governor
     details: Dynamically lower the frequency on the GPU to save power and achieve lower temperatures.
   - title: Built-in configurator overlay

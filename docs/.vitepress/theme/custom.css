@@ -1,5 +1,5 @@
 :root {
-  --vp-home-hero-name-font-size: 54px;
+  --vp-home-hero-name-font-size: 76px;
   --vp-home-hero-name-gradient: linear-gradient(90deg, #ff5e9c 0%, #ff8a5c 45%, #ffd166 100%);
   --vp-home-hero-image-background-image: radial-gradient(circle at 35% 35%, rgba(255, 94, 156, 0.85), transparent 45%),
     radial-gradient(circle at 65% 25%, rgba(255, 141, 92, 0.9), transparent 55%),
@@ -26,17 +26,41 @@
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 10px 30px rgba(255, 94, 156, 0.25);
-  margin-bottom: 60px;
+  text-shadow: 0 0 35px rgba(255, 94, 156, 0.4);
+  margin-bottom: 24px;
 }
 
 .VPHero .text {
-  font-size: 18px;
-  line-height: 1.4;
+  font-size: 36px;
+  line-height: 1.6;
 }
 
 .VPHero .tagline {
   font-size: 16px;
+}
+
+.VPHero .actions .VPButton {
+  border-radius: 14px;
+  min-height: 44px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.VPHero .actions .VPButton.brand {
+  background: #ff5e9c;
+  border-color: #ff5e9c;
+  box-shadow: 0 0 25px rgba(255, 94, 156, 0.5), 0 0 0 1px rgba(255, 128, 90, 0.28);
+}
+
+.VPHero .actions .VPButton.brand:hover {
+  background: #ff8a5c;
+  border-color: #ff8a5c;
+}
+
+.VPHero .actions .VPButton.alt {
+  border-radius: 14px;
 }
 
 .VPFeatures .VPFeature {
