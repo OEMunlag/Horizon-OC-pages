@@ -22,7 +22,7 @@ hero:
 
 features:
   - title: CPU/GPU/MEM Overclock
-    details: Achieve up to 1963 MHz CPU, 921 MHz GPU and 1866 MHz memory, with additional options for more.
+    details: Achieve up to 2703 MHz CPU, 1804 MHz GPU and 8000 MHz memory, with additional options for more.
   - title: GPU Governor
     details: Dynamically lower the frequency on the GPU to save power and achieve lower temperatures.
   - title: Built-in configurator overlay
