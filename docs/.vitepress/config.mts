@@ -2,8 +2,6 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  srcDir: "../docs",
-  
   title: "Horizon OC",
   description: "An open source overclocking tool for Nintendo Switch consoles running Atmosphere custom firmware ",
   themeConfig: {
@@ -15,10 +13,10 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Documentation',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'Frequently Asked Questions', link: '/faq' },
           { text: 'Mariko OC Guide', link: '/mariko' }
         ]
       }

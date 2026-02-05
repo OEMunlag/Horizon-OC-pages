@@ -28,12 +28,12 @@ jobs:
           node-version: 25.6.0
           cache: 'npm'
 
-      - run: npm install --frozen-lockfile
-      - run: npm run build
+      - run: npm ci
+      - run: npx vitepress build docs
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
-          path: .vitepress/dist
+          path: docs/.vitepress/dist
 
   deploy:
     environment:
