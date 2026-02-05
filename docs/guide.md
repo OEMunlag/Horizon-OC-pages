@@ -10,16 +10,16 @@ Getting started is easy, so long as you have a modded Switch with Atmosphere.
 **Currently supported Atmosphere version:** `1.10.2`
 Please check that your Atmosphere version matches before proceeding.
 
-1. Download **[Horizon-OC GitHub](https://github.com/Horizon-OC/Horizon-OC/releases/)**.
-2. Alternatively, we also have nightly builds available through **[GitHub actions](https://github.com/Horizon-OC/Horizon-OC/actions/workflows/build.yml)**. We also plan to add nightly.link support in the future. However, those builds haven't been tested and are unsupported—use them only if you have a specific reason.
+::: warning IMPORTANT
+Whenever you install HOC, we recommend doing it through **Haze MTP**, **Hekate UMS**, or any **FTP server**. Do not remove the SD card from the slot; frequent removal can harm the reader.
+:::
+
+1. Download latest dist.zip at **[Horizon-OC GitHub](https://github.com/Horizon-OC/Horizon-OC/releases/)**.
+2. Alternatively, we also have nightly builds available through **[GitHub actions](https://github.com/Horizon-OC/Horizon-OC/actions/workflows/build.yml)**. We also plan to add nightly.link support in the future. However, those builds haven't been tested and are unsupported, so use them only if you have a specific reason.
 3. Once you've downloaded it, the extracted contents are drag-n-drop. You can let it overwrite contents on the SD card if prompted.
 
 ::: info NOTE
 This may overwrite your current version of `sys-clk`. If you must keep your specific version, copy only `atmosphere/kips/hoc.kip` to the SD card in its respective folder. However, rest assured `hoc-clk` has many more features and is the supported version going forward.
-:::
-
-::: warning IMPORTANT
-Whenever you install HOC, we recommend doing it through **Haze MTP**, **Hekate UMS**, or any **FTP server**. Do not remove the SD card from the slot; frequent removal can harm the reader.
 :::
 
 ::: tip Custom exosphere
@@ -60,7 +60,7 @@ pkg3=atmosphere/package3
 emummcforce=1
 icon=bootloader/res/emu_boot.bmp
 ```
-Note the lack of `kip1` and `secmon`. While `hoc-clk`, the sysmodule, and the overlay will still boot, the overclock configs will **not** be applied.
+Note the lack of `kip1` and `secmon`. While `hoc-clk`, the sysmodule, and the overlay will still boot, the overclock configurations will **not** be applied.
 :::
 
 ### Running the Overlay
