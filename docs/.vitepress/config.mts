@@ -8,16 +8,16 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Guides', link: '/guide.md' }
     ],
 
     sidebar: [
       {
         text: 'Documentation',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Frequently Asked Questions', link: '/faq' },
-          { text: 'Mariko OC Guide', link: '/mariko' }
+          { text: 'Getting Started', link: '/guide.md' },
+          { text: 'Frequently Asked Questions', link: '/faq.md' },
+          { text: 'Mariko OC Guide', link: '/mariko.md' }
         ]
       }
     ],
