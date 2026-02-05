@@ -38,3 +38,19 @@
 .VPHero .tagline {
   font-size: 16px;
 }
+
+.VPFeatures .VPFeature {
+  position: relative;
+  border-radius: 9px;
+  background: var(--vp-c-bg-soft);
+  border: none;
+}
+
+.VPFeatures .VPFeature::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #457e7890, #322d2e);
+  z-index: -1;
+}
