@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Horizon OC"
-  text: "An open source overclocking tool for Nintendo Switch consoles running Atmosphere custom firmware "
+  text: "An open source overclocking tool for Nintendo Switch consoles running Atmosphere custom firmware"
   tagline: We should add a tagline like genuinely give ideas please
   image:
     src: /235948817.png
@@ -27,8 +27,6 @@ features:
     details: Dynamically lower the frequency on the GPU to save power and achieve lower temperatures.
   - title: Built-in configurator overlay
     details: Configure Horizon-OC for your console using the integrated hoc-clk overlay right away on your switch.
-  - title: GPU Governor
-    details: Dynamically lower the frequency on the GPU to save power and achieve lower temperatures.
   - title: Memory timings on-the-go
     details: Change memory timings without needing to reboot your console.
 ---
