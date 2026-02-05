@@ -1,0 +1,23 @@
+:root {
+  --vp-home-hero-name-font-size: 48px;
+  --vp-home-hero-name-gradient: linear-gradient(90deg, #ff5e9c 0%, #ff8a5c 45%, #ffd166 100%);
+}
+
+.VPHero .name {
+  font-size: var(--vp-home-hero-name-font-size);
+  background: var(--vp-home-hero-name-gradient);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 30px rgba(255, 94, 156, 0.25);
+}
+
+.VPHero .text {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.VPHero .tagline {
+  font-size: 16px;
+}
