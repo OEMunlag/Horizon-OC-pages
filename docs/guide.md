@@ -12,7 +12,7 @@ Please check that your Atmosphere version matches before proceeding.
 
 1. Download **[Horizon-OC GitHub](https://github.com/Horizon-OC/Horizon-OC/releases/)**.
 2. Alternatively, we also have nightly builds available through **[GitHub actions](https://github.com/Horizon-OC/Horizon-OC/actions/workflows/build.yml)**. We also plan to add nightly.link support in the future. However, those builds haven't been tested and are unsupported—use them only if you have a specific reason.
-3. Once you've downloaded it, the extracted contents are "drag and drop." You can let it overwrite contents on the SD card if prompted.
+3. Once you've downloaded it, the extracted contents are drag-n-drop. You can let it overwrite contents on the SD card if prompted.
 
 ::: info NOTE
 This may overwrite your current version of `sys-clk`. If you must keep your specific version, copy only `atmosphere/kips/hoc.kip` to the SD card in its respective folder. However, rest assured `hoc-clk` has many more features and is the supported version going forward.
@@ -69,5 +69,5 @@ You're ready to go! After booting, if it succeeded, you can open your overlay (l
 
 Depending on your Switch model, refer to the specific configuration guide:
 
-*   **Mariko (V2, Lite, OLED):** [Mariko Config Guide](/mariko)
-*   **Erista (2017-2018 Unpatched/Patched):** [Erista Config Guide](/erista)
+*   **Mariko (V2, Lite, OLED):** [Mariko Config Guide](/mariko.md)
+*   **Erista (2017-2018 Unpatched/Patched):** [Erista Config Guide](/erista.md)
