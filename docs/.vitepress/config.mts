@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Horizon OC",
+  head: [['link', { rel: 'icon', href: '235948817.png' }]],
   description: "An open source overclocking tool for Nintendo Switch consoles running Atmosphere custom firmware ",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

@@ -27,7 +27,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 35px rgba(255, 94, 156, 0.4);
-  margin-bottom: 24px;
+  margin-bottom: 0px;
 }
 
 .VPHero .text {
@@ -50,13 +50,12 @@
 
 .VPHero .actions .VPButton.brand {
   background: #ff5e9c;
-  border-color: #ff5e9c;
-  box-shadow: 0 0 25px rgba(255, 94, 156, 0.5), 0 0 0 1px rgba(255, 128, 90, 0.28);
+  box-shadow: 0 0 25px #ff5e9c, 0 0 0 0px #ff8a5c;
 }
 
 .VPHero .actions .VPButton.brand:hover {
-  background: #ff8a5c;
-  border-color: #ff8a5c;
+  background: #d562dd;
+  box-shadow: 0 0 25px #d562dd, 0 0 0 0px #ffba4c;
 }
 
 .VPHero .actions .VPButton.alt {
