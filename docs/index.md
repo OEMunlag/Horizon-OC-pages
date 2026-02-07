@@ -5,9 +5,9 @@ layout: home
 hero:
   name: "Horizon OC"
   text: "An open source overclocking tool for Nintendo Switch consoles running Atmosphere custom firmware"
-  tagline: Horizon OC te conviene
+  tagline: I'm still in a dire need of taglines
   image:
-    src: /235948817.png
+    src: /lite.svg
     alt: Horizon OC Logo
   actions:
     - theme: brand

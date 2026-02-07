@@ -130,28 +130,31 @@
 }
 
 :root {
-  --vp-home-hero-name-font-size: 76px;
+  --vp-home-hero-name-font-size: 48px;
   --vp-home-hero-name-gradient: linear-gradient(90deg, #ff5e9c 0%, #ff8a5c 45%, #ffd166 100%);
-  --vp-home-hero-image-background-image: radial-gradient(circle at 35% 35%, rgba(255, 94, 156, 0.85), transparent 45%),
-    radial-gradient(circle at 65% 25%, rgba(255, 141, 92, 0.9), transparent 55%),
-    radial-gradient(circle at 40% 70%, rgba(255, 209, 102, 0.6), transparent 65%);
+  --vp-home-hero-image-background-image: radial-gradient(circle at 35% 35%, rgba(130, 130, 130, 0.85), transparent 45%),
+    radial-gradient(circle at 65% 25%, rgba(88, 88, 88, 0.9), transparent 55%),
+    radial-gradient(circle at 40% 70%, rgba(36, 36, 36, 0.6), transparent 65%);
   --vp-home-hero-image-filter: blur(60px);
 }
 
 @media (min-width: 640px) {
   :root {
+    --vp-home-hero-name-font-size: 64px;
     --vp-home-hero-image-filter: blur(76px);
   }
 }
 
 @media (min-width: 960px) {
   :root {
+    --vp-home-hero-name-font-size: 76px;
     --vp-home-hero-image-filter: blur(92px);
   }
 }
 
 .VPHero .name {
   font-size: var(--vp-home-hero-name-font-size);
+  line-height: 1.15;
   background: var(--vp-home-hero-name-gradient);
   background-clip: text;
   color: transparent;
@@ -162,8 +165,22 @@
 }
 
 .VPHero .text {
-  font-size: 36px;
-  line-height: 1.6;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-top: 12px;
+}
+
+@media (min-width: 640px) {
+  .VPHero .text {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPHero .text {
+    font-size: 36px;
+    line-height: 1.6;
+  }
 }
 
 .VPHero .tagline {
