@@ -51,7 +51,7 @@ secmon=atmosphere/exosphere.bin
 ```
 
 ::: tip Safety Instance
-You can also make a separate instance to boot without the KIP and exosphere patch. In case an unstable overclock config causes instability, you can boot into this "clean" instance to fix your config.
+You can also make a separate instance to boot without the .kip and exosphere patch. In case an unstable overclock config causes instability, you can boot into this "clean" instance to fix your config.
 
 Example:
 ```ini
@@ -65,7 +65,7 @@ Note the lack of `kip1` and `secmon`. While `hoc-clk`, the sysmodule, and the ov
 
 ### Running the Overlay
 
-You're ready to go! After booting, if it succeeded, you can open your overlay (likely **Ultrahand**) generally by pressing <kbd>ZL</kbd> + <kbd>ZR</kbd> + <kbd>D-Pad Down</kbd>.
+You're ready to go! After booting, if it succeeded, you can open your overlay (we highly recommend **Ultrahand**, as it's the only one supported, because hoc-clk builds upon libultrahand) generally by pressing <kbd>ZL</kbd> + <kbd>ZR</kbd> + <kbd>D-Pad Down</kbd>. Then, you will find both Horizon OC and Horizon OC Status Monitor in the list.
 
 Depending on your Switch model, refer to the specific configuration guide:
 
