@@ -148,9 +148,18 @@ function parseAdmonition(rawType, rawContent) {
 // ---------------------------------------------------------------------------
 
 /**
+ * Fix headings that are missing the required space after '#' markers.
+ * e.g. "###Foo" → "### Foo"
+ */
+function fixHeadingSpacing(markdown) {
+  return markdown.replace(/^(#{1,6})([^ #\n])/gm, "$1 $2");
+}
+
+/**
  * Convert all !!! / ??? admonitions in `markdown` to VitePress ::: containers.
  */
 function convertAdmonitions(markdown) {
+  markdown = fixHeadingSpacing(markdown);
   const lines = markdown.split("\n");
   const result = [];
   let i = 0;

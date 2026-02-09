@@ -332,4 +332,4 @@ Switch Lite limits are lower due to the 12W board power limit, but counts as Mar
 
 # Need Help with Setup?
 
-###Follow this [guide](https://rentry.co/howtoget60fps) for a step-by-step setup.
+### Follow this [guide](https://rentry.co/howtoget60fps) for a step-by-step setup.
