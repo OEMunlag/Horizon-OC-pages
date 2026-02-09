@@ -2,6 +2,8 @@
 
 *Made with love by Dominatorul. Some parts of this guide belong to ChanseyIsTheBest, Lightos_ and Souldbminer*
 
+---
+
 ## Table of Contents
 - [Safety Disclaimer](#safety-disclaimer)
 - [Mariko Limits](#mariko-limits)
@@ -23,7 +25,6 @@
 ---
 
 # Safety Disclaimer
-
 ::: info
 Overclocking is inherently risky as it pushes the system beyond its original design. The risk level depends on how much you overclock and whether you stay within the limits of the chip and hardware.
 :::
@@ -54,7 +55,6 @@ This setting adjusts how much of your GPU can be utilized:
 - **On:** Limits GPU usage to ~96.7%
 - **Off:** Limits GPU usage to ~99.7% (up to ~5% performance boost)
 - **Recommended:** GPU scheduling **off**.
-
 ::: warning Warning
 Disabling GPU Scheduling will slightly increase power draw. Use it with caution.
 :::
@@ -85,12 +85,13 @@ Disabling GPU Scheduling will slightly increase power draw. Use it with caution.
 
 | Tier        | RAM ID           |
 |-------------|------------------|
-| GOD-tier    | NEI/NEE, WT:B          |
+| GOD-tier    | WT:B, NEI/NEE |
 | S-tier      |  AA-MGCR, AA-MGCL           |
-| A-tier      |WT:F   |
-| B-tier      | AM-MGCJ, WT:E    |
-| C-tier      | AB-MGCL     |
+| A-tier      |AM-MGCJ, WT:E  |
+| B-tier      | WT:F    |
+| C-tier      | AB-MGCL    |
 | D-tier      | NME     |
+
 
 ---
 
@@ -104,7 +105,7 @@ Disabling GPU Scheduling will slightly increase power draw. Use it with caution.
   - Allows boost mode to be overwritten with a custom profile. Recommended: OFF
 
 - **Thermal Throttle:**
-  - Lowers clocks when a certain temperature threshold is reached (by default 70C/158F). Recommended: ON
+  - Lowers clocks when a certain temperature threshold is reached (by default 70C). Recommended: ON
 
 - **Handheld TDP:**
   - Lowers clocks when the power being pulled from the battery exceeds a threshold (by default 8600mW on regular consoles, 6400mW on lite). Recommended: ON
@@ -158,7 +159,9 @@ Disabling GPU Scheduling will slightly increase power draw. Use it with caution.
 
 - **Undervolt Table:** HiOPT Table
 
+::: danger
 TODO: auto vmin/gpu ram dvfs is not implemented into hoc-clk currently
+:::
 - **GPU DVFS:**
   - When RAM is overclocked, the minimum GPU voltage requirement is raised.
   - Auto vmin automatically adjusts your vmin based on your ram clock.
@@ -179,44 +182,45 @@ TODO: auto vmin/gpu ram dvfs is not implemented into hoc-clk currently
 ## RAM Settings
 
 - **HP Mode** ON
-  > **ℹ️ Tip:** HP Mode improves latency by disabling power down, but some RAM modules may not handle it well.
-  > - First, find your max RAM clocks and timings with **HP Mode** disabled.
-  > - Then test with enabled **HP Mode**. If stable, use it - otherwise disable it.
+ > **ℹ️ Tip:** HP Mode improves latency by disabling power down, but some RAM modules may not handle it well.
+ > First, find your max RAM clocks and timings with **HP Mode** disabled.
+ > Then test with enabled **HP Mode**. If stable, use it - otherwise disable it.
 
 - **DVB Shift:** 1–10
   - Boosts SoC voltage to help stabilize RAM, especially at high frequencies (2400 MHz+ and 3000Mhz+).
-  - It's adviced to start of with a DVB shift of 8-10 and only lower it to 2-6 after finding your max ram speed.
+  - It's adviced to start of with a DVB shift of 10 and only lower it to 2-6 after finding your max ram speed.
   - Higher DVB shift does not increase power draw, but it is going to increase heat slightly.
 
 ### RAM Configuration Based on Tier for Different Base Latency
 
 #### 2133/1866 Base Latency Tier List (Recommended docked)
-| Tier | RAM ID              | Ram Clock (MHz)         | VDD2   | VDDQ  | Common Timings      | Super‑Tight (ST) Timings |
-|------|---------------------|-------------------------|--------|-------|---------------------|--------------------------|
-| GOD  | WT:B                | 3066–3200               | 1175 mV| 600 mV| (4‑4‑5) 4‑2‑6‑5‑6   | (6‑6‑7) 6‑2‑6‑5‑6        |
-| GOD  | NEI/NEE             | 3100–3300               | 1175 mV| 640 mV| (3‑3‑3) 1‑5‑5‑4‑6   | (4‑4‑4) 2‑7‑6‑6‑6        |
-| S    | AA‑MGCL/MGCR        | 2766–3100               | 1175 mV| 640 mV| (4‑4‑5) 4‑5‑6‑7‑6   | (4‑4‑8) 5‑5‑7‑8‑6        |
-| A    | MGCJ                | 2633–2933               | 1175 mV| 640 mV| (3‑2‑4) 1‑4‑4‑4‑6   | (4‑3‑8) 2‑5‑4‑4‑6          |
-| B    | WT:F                | 2633–2800               | 1175 mV| 600 mV| (4‑4‑2) 4‑4‑6‑3‑6   | (5‑5‑4) 4‑5‑6‑5‑6        |
-| C    | AB‑MGCL             | 2500-2766                  | 1175 mV| 640 mV| (4‑4‑4) 3‑4‑5‑6‑6   | (4‑4‑8) 4‑5‑6‑8‑6        |
-| D    | NME                 | 2500–2766               | 1175 mV| 640 mV| (2‑2‑1) 0‑1‑4‑3‑6   | (3‑3‑4) 0‑1‑4‑4‑6        |
+| Tier | RAM ID       | Ram Clock | VDD2   | VDDQ  | Common Timings           | Super Tight (ST) Timings  |
+|------|--------------|-----------|--------|-------|--------------------------|---------------------------|
+| GOD  | WT:B         | 3066–3200 | 1175 mV| 600 mV| (4-4-5) 4-2-6-5-6        | (6-6-7) 6-2-6-5-6         |
+| GOD  | NEI/NEE/x267 | 3100–3300 | 1175 mV| 640 mV| (3-3-2) 1-5-5-4-6        | (4-4-4) 2-7-6-5-6         |
+| S    | AA-MGCL/MGCR | 2766–3100 | 1175 mV| 600 mV| (4-4-5) 4-5-6-7-6        | (4-4-8) 5-5-7-8-6         |
+| A    | AM-MGCJ      | 2633–2933 | 1175 mV| 640 mV| (3-2-4) 1-4-4-4-6        | (4-3-8) 1-5-4-4-6         |
+| A    | WT:E         | 2500–2933 | 1175 mV| 600 mV| (2-2-2) 1-4-4-4-6        | (3-5-3) 2-5-4-5-6         |
+| B    | WT:F         | 2633–2800 | 1175 mV| 600 mV| (4-4-2) 4-4-6-3-6        | (5-5-4) 4-5-6-5-6         |
+| C    | AB-MGCL      | 2500-2766 | 1175 mV| 640 mV| (4-4-4) 3-4-5-6-6        | (4-4-8) 4-5-6-8-6         |
+| D    | NME          | 2500-2766 | 1175 mV| 640 mV| (2-2-1) 0-1-4-3-6        | (3-3-4) 0-1-4-4-6         |
 
-> You may use 1866 read/write latency to improve performance although it could require increased voltages
+> You may use 1866 read/write latency to improve performance.
 
 #### 1600 Base Latency Tier List
-| Tier | RAM ID              | Ram Clock (MHz) | VDD2   | VDDQ  | Common Timings        | Super Tight (ST) Timings |
-|------|---------------------|-----------------|--------|-------|-----------------------|--------------------------|
-| GOD  | NEI/NEE/x267        | 2500–2933       | 1175 mV| 640 mV| (3‑3‑3) 1‑5‑5‑4‑6     | (4‑4‑4) 2‑7‑6‑5‑6        |
-| GOD  | WT:B                | 2466–2600       | 1175 mV| 600 mV| (4‑4‑5) 4‑2‑6‑5‑6     | (6‑6‑7) 6‑2‑6‑5‑6        |
-| S    | AA‑MGCL/MGCR        | 2300–2600       | 1175 mV| 640 mV| (4‑4‑5) 4‑5‑6‑7‑6     | (4‑4‑8) 5‑5‑7‑8‑6        |
-| A    | WT:F                | 2400–2533       | 1175 mV| 600 mV| (4‑4‑2) 4‑4‑6‑3‑6     | (5‑5‑4) 4‑5‑6‑5‑6        |
-| B    | AM‑MGCJ             | 2300–2466       | 1175 mV| 640 mV| (3‑2‑4) 1‑4‑4‑4‑6     | (4‑3‑8) 1‑5‑4‑4‑6        |
-| B    | WT:E                | 2300–2466       | 1175 mV| 600 mV| (2‑2‑2) 1‑4‑4‑4‑6     | (3‑5‑3) 2‑5‑4‑5‑6        |
-| C    | AB‑MGCL             | 2133–2500       | 1175 mV| 640 mV| (4‑4‑4) 3‑4‑5‑6‑6     | (4‑4‑8) 4‑5‑6‑8‑6        |
-| D    | NME                 | 2133–2333       | 1175 mV| 640 mV| (2‑2‑1) 0‑1‑4‑3‑6     | (3‑3‑4) 0‑1‑4‑4‑6        |
+| Tier | RAM ID       | Ram Clock | VDD2   | VDDQ  | Common Timings           | Super Tight (ST) Timings  |
+|------|--------------|-----------|--------|-------|--------------------------|---------------------------|
+| GOD  | NEI/NEE/x267 | 2500–2933 | 1175 mV| 640 mV| (3-3-2) 1-5-5-4-6        | (4-4-4) 2-7-6-5-6         |
+| GOD  | WT:B         | 2466–2600 | 1175 mV| 600 mV| (4-4-5) 4-2-6-5-6        | (6-6-7) 6-2-6-5-6         |
+| S    | WT:F         | 2400–2533 | 1175 mV| 600 mV| (4-4-2) 4-4-6-3-6        | (5-5-4) 4-5-6-5-6         |
+| A    | AA-MGCL/MGCR | 2300–2600 | 1175 mV| 600 mV| (4-4-5) 4-5-6-7-6        | (4-4-8) 5-5-7-8-6         |
+| B    | AM-MGCJ      | 2300–2466 | 1175 mV| 640 mV| (3-2-4) 1-4-4-4-6        | (4-3-8) 1-5-4-4-6         |
+| B    | WT:E         | 2300–2466 | 1175 mV| 600 mV| (2-2-2) 1-4-4-4-6        | (3-5-3) 2-5-4-5-6         |
+| C    | AB-MGCL      | 2133–2500 | 1175 mV| 640 mV| (4-4-4) 3-4-5-6-6        | (4-4-8) 4-5-6-8-6         |
+| D    | NME          | 2133–2333 | 1175 mV| 640 mV| (2-2-1) 0-1-4-3-6        | (3-3-4) 0-1-4-4-6         |
 
 ::: tip Note
-1333tWRL achieves better performance but tops out at a lower frequency (often 300-500MHz less compared to 1600tWRL), recommended to test for handheld.
+1333tRWL achieves better performance but tops out at a lower frequency (often 300-500MHz less compared to 1600tRWL), recommended to test for handheld.
 :::
 
 ::: tip Note
@@ -232,7 +236,7 @@ If your RAM clock goes significantly lower than the target, you may be experienc
 > **💡 Extra Headroom:** For tighter timings or base latency reduction, you may use slight overvoltage. Note that too much overvoltage can cause instability.
 
 > **🧪 Testing Method:**
-> 1. Start by setting **DVB = 8** using the common preset.
+> 1. Start by setting **DVB = 10** using the common preset.
 > 2. Test **ST (Super Tight) timings**.
 > 3. If ST fails, relax timings one by one in this order: `t8 → t1 → t2 → t3 → t6 → t7 → t4 → t5`.
 > 4. For pushing beyond ST, apply the same incremental approach.
@@ -251,19 +255,17 @@ If your RAM clock goes significantly lower than the target, you may be experienc
 - **CPU:** 1963 MHz
 - **GPU:** 998 MHz
 - **RAM:** 2133 MHz - 2500+ MHz (use whatever is stable; 2400 MHz recommended for best battery life-to-performance ratio)
-
-::: warning Note
-Drawing over 8.6W on battery will cause battery issues. Please avoid doing that for extended periods!
-:::
+ ::: warning Note
+ Drawing over 8.6W on battery will cause battery issues. Please avoid doing that for extended periods!
+ :::
 
 ### Switch Lite Max Safe Clocks on Battery [HDH-001]
 - **CPU:** 1785 MHz
 - **GPU:** 921 MHz
 - **RAM:** 2133 MHz - 2500+ MHz (use whatever is stable; 2400 MHz recommended for best battery life-to-performance ratio)
-
-::: warning Note
-Drawing over 6.5W on battery will cause battery issues. Please avoid doing that for extended periods!
-:::
+ ::: warning Note
+ Drawing over 6.5W on battery will cause battery issues. Please avoid doing that for extended periods!
+ :::
 
 ::: tip Note
 Switch Lite limits are lower due to the 12W board power limit, but counts as Mariko for all other purposes.
@@ -330,4 +332,4 @@ Switch Lite limits are lower due to the 12W board power limit, but counts as Mar
 
 # Need Help with Setup?
 
-### Follow this [guide](https://rentry.co/howtoget60fps) for a step-by-step setup.
+###Follow this [guide](https://rentry.co/howtoget60fps) for a step-by-step setup.
