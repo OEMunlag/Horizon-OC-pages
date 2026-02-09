@@ -1,0 +1,41 @@
+name: Update Mariko Guide
+
+on:
+  schedule:
+    - cron: '30 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-mariko:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6.2.0
+        with:
+          node-version: '25.6.0'
+
+      - name: Fetch and convert Mariko guide
+        run: node scripts/convert-to-vitepress.js rentry.co/mariko docs/mariko.md
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet docs/mariko.md && echo "changed=false" >> "$GITHUB_OUTPUT" || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Create Pull Request
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v8.1.0
+        with:
+          commit-message: 'docs: update mariko.md from rentry.co/mariko'
+          title: 'docs: update mariko.md'
+          body: Automated daily update of docs/mariko.md
+          branch: auto-update/mariko
+          delete-branch: true
