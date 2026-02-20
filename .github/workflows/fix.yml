@@ -1,4 +1,4 @@
-name: Update Mariko Guide
+name: Update Mariko & Erista Guide
 
 on:
   schedule:
@@ -20,11 +20,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6.2.0
         with:
-          node-version: '25.6.0'
+          node-version: '25.6.1'
 
-      - name: Fetch and convert Mariko guide
-        run: node scripts/convert-to-vitepress.js rentry.co/mariko docs/mariko.md
-
+      - name: Fetch and convert guides
+        run: |
+          node scripts/convert-to-vitepress.js rentry.co/mariko docs/mariko.md
+          node scripts/convert-to-vitepress.js rentry.co/erista docs/erista.md
+          node scripts/convert-to-vitepress.js rentry.co/mariko2 docs/mariko2.md
       - name: Check for changes
         id: diff
         run: |
@@ -34,8 +36,8 @@ jobs:
         if: steps.diff.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v8.1.0
         with:
-          commit-message: 'docs: update mariko.md from rentry.co/mariko'
-          title: 'docs: update mariko.md'
-          body: Automated daily update of docs/mariko.md
-          branch: auto-update/mariko
+          commit-message: 'docs: update documentation md from rentry'
+          title: 'docs: update mariko.md, mariko2.md and erista.md'
+          body: Automated daily update of docs md
+          branch: auto-update/docs
           delete-branch: true
